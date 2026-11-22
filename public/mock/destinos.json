@@ -1,0 +1,133 @@
+{
+  "data": [
+    {
+      "id": "buenos-aires",
+      "ciudad": "Buenos Aires",
+      "pais": "Argentina",
+      "continente": "Sudamérica",
+      "descripcion": "Tango, cultura y barrios llenos de vida.",
+      "actividades": [
+        "Caminito",
+        "Teatro Colón",
+        "Puerto Madero"
+      ],
+      "emoji": "💃",
+      "color": "#ffe9dc",
+      "mejorTemporada": "Otoño y primavera",
+      "diasSugeridos": 4
+    },
+    {
+      "id": "rio-de-janeiro",
+      "ciudad": "Río de Janeiro",
+      "pais": "Brasil",
+      "continente": "Sudamérica",
+      "descripcion": "Playas, montañas y paisajes inolvidables.",
+      "actividades": [
+        "Cristo Redentor",
+        "Copacabana",
+        "Pan de Azúcar"
+      ],
+      "emoji": "🏖️",
+      "color": "#d8f3ec",
+      "mejorTemporada": "Verano",
+      "diasSugeridos": 6
+    },
+    {
+      "id": "cusco",
+      "ciudad": "Cusco",
+      "pais": "Perú",
+      "continente": "Sudamérica",
+      "descripcion": "Historia andina y rutas hacia lugares legendarios.",
+      "actividades": [
+        "Machu Picchu",
+        "Valle Sagrado",
+        "Plaza de Armas"
+      ],
+      "emoji": "⛰️",
+      "color": "#ede4ff",
+      "mejorTemporada": "Estación seca",
+      "diasSugeridos": 5
+    },
+    {
+      "id": "cancun",
+      "ciudad": "Cancún",
+      "pais": "México",
+      "continente": "Norteamérica",
+      "descripcion": "Aguas turquesas y aventuras en el Caribe.",
+      "actividades": [
+        "Isla Mujeres",
+        "Cenotes",
+        "Chichén Itzá"
+      ],
+      "emoji": "🌴",
+      "color": "#d8f4fa",
+      "mejorTemporada": "Primavera",
+      "diasSugeridos": 7
+    },
+    {
+      "id": "madrid",
+      "ciudad": "Madrid",
+      "pais": "España",
+      "continente": "Europa",
+      "descripcion": "Museos, parques y tradiciones españolas.",
+      "actividades": [
+        "Museo del Prado",
+        "Parque del Retiro",
+        "Palacio Real"
+      ],
+      "emoji": "🎨",
+      "color": "#ffe7e4",
+      "mejorTemporada": "Primavera",
+      "diasSugeridos": 7
+    },
+    {
+      "id": "paris",
+      "ciudad": "París",
+      "pais": "Francia",
+      "continente": "Europa",
+      "descripcion": "Arte, arquitectura y gastronomía parisina.",
+      "actividades": [
+        "Torre Eiffel",
+        "Louvre",
+        "Montmartre"
+      ],
+      "emoji": "🗼",
+      "color": "#e9edff",
+      "mejorTemporada": "Primavera",
+      "diasSugeridos": 7
+    },
+    {
+      "id": "tokio",
+      "ciudad": "Tokio",
+      "pais": "Japón",
+      "continente": "Asia",
+      "descripcion": "Tradición y tecnología en una ciudad vibrante.",
+      "actividades": [
+        "Shibuya",
+        "Templo Sensō-ji",
+        "Akihabara"
+      ],
+      "emoji": "🗾",
+      "color": "#fff0d1",
+      "mejorTemporada": "Primavera",
+      "diasSugeridos": 9
+    },
+    {
+      "id": "puerto-varas",
+      "ciudad": "Puerto Varas",
+      "pais": "Chile",
+      "continente": "Sudamérica",
+      "descripcion": "Lagos y volcanes en el sur de Chile.",
+      "actividades": [
+        "Lago Llanquihue",
+        "Volcán Osorno",
+        "Saltos de Petrohué"
+      ],
+      "emoji": "🌋",
+      "color": "#e0f2e1",
+      "mejorTemporada": "Verano",
+      "diasSugeridos": 4
+    }
+  ],
+  "total": 8
+}

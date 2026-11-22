@@ -1,0 +1,414 @@
+{
+  "categorias": [
+    {
+      "id": "ficcion",
+      "nombre": "Ficción",
+      "descripcion": "Historias que conectan con la vida cotidiana y la imaginación.",
+      "emoji": "📖",
+      "color": "#E7F5E5"
+    },
+    {
+      "id": "ciencia-ficcion",
+      "nombre": "Ciencia ficción",
+      "descripcion": "Viajes al futuro, inteligencia artificial y nuevos mundos.",
+      "emoji": "🚀",
+      "color": "#E7EDFF"
+    },
+    {
+      "id": "fantasia",
+      "nombre": "Fantasía",
+      "descripcion": "Mundos mágicos, criaturas y aventuras extraordinarias.",
+      "emoji": "🪄",
+      "color": "#F0E8FF"
+    },
+    {
+      "id": "misterio",
+      "nombre": "Misterio",
+      "descripcion": "Enigmas, secretos e investigaciones sorprendentes.",
+      "emoji": "🔍",
+      "color": "#F9EBE2"
+    },
+    {
+      "id": "historia",
+      "nombre": "Historia",
+      "descripcion": "Relatos de civilizaciones y acontecimientos del pasado.",
+      "emoji": "🏛️",
+      "color": "#F5EEDC"
+    },
+    {
+      "id": "tecnologia",
+      "nombre": "Tecnología",
+      "descripcion": "Ideas y herramientas para comprender el mundo digital.",
+      "emoji": "💻",
+      "color": "#DFF2F7"
+    },
+    {
+      "id": "infantil",
+      "nombre": "Infantil",
+      "descripcion": "Lecturas entretenidas para pequeños lectores.",
+      "emoji": "🧸",
+      "color": "#FFF2CC"
+    },
+    {
+      "id": "desarrollo-personal",
+      "nombre": "Desarrollo personal",
+      "descripcion": "Hábitos, aprendizaje y crecimiento personal.",
+      "emoji": "🌱",
+      "color": "#E5F5ED"
+    }
+  ],
+  "libros": [
+    {
+      "id": "ficcion-1",
+      "titulo": "La casa de los almendros",
+      "autor": "Camila Rojas",
+      "categoriaId": "ficcion",
+      "anio": 2021,
+      "paginas": 192,
+      "precio": 13990,
+      "descripcion": "Una familia redescubre su historia a través de cartas escondidas.",
+      "disponible": true
+    },
+    {
+      "id": "ficcion-2",
+      "titulo": "Las calles del invierno",
+      "autor": "Martín Salcedo",
+      "categoriaId": "ficcion",
+      "anio": 2022,
+      "paginas": 240,
+      "precio": 14990,
+      "descripcion": "Un encuentro inesperado cambia la vida de un barrio entero.",
+      "disponible": true
+    },
+    {
+      "id": "ficcion-3",
+      "titulo": "Un café a medianoche",
+      "autor": "Elena Vidal",
+      "categoriaId": "ficcion",
+      "anio": 2020,
+      "paginas": 176,
+      "precio": 11990,
+      "descripcion": "Distintas personas se reúnen en una cafetería que nunca cierra.",
+      "disponible": true
+    },
+    {
+      "id": "ficcion-4",
+      "titulo": "El último tren del sur",
+      "autor": "Paula Ibáñez",
+      "categoriaId": "ficcion",
+      "anio": 2024,
+      "paginas": 228,
+      "precio": 15990,
+      "descripcion": "Un viaje de regreso revela amistades y promesas olvidadas.",
+      "disponible": true
+    },
+    {
+      "id": "ciencia-ficcion-1",
+      "titulo": "Estación Aurora",
+      "autor": "Nicolás Pereira",
+      "categoriaId": "ciencia-ficcion",
+      "anio": 2024,
+      "paginas": 304,
+      "precio": 18990,
+      "descripcion": "Una tripulación descubre señales desconocidas más allá de la Luna.",
+      "disponible": true
+    },
+    {
+      "id": "ciencia-ficcion-2",
+      "titulo": "Código Neón",
+      "autor": "Valeria Cruz",
+      "categoriaId": "ciencia-ficcion",
+      "anio": 2023,
+      "paginas": 264,
+      "precio": 17990,
+      "descripcion": "Una programadora investiga una ciudad controlada por algoritmos.",
+      "disponible": true
+    },
+    {
+      "id": "ciencia-ficcion-3",
+      "titulo": "Mañana en Marte",
+      "autor": "Sofía Marín",
+      "categoriaId": "ciencia-ficcion",
+      "anio": 2022,
+      "paginas": 288,
+      "precio": 19990,
+      "descripcion": "Los habitantes de la primera colonia marciana enfrentan una decisión.",
+      "disponible": true
+    },
+    {
+      "id": "ciencia-ficcion-4",
+      "titulo": "Memoria de silicio",
+      "autor": "Tomás Leiva",
+      "categoriaId": "ciencia-ficcion",
+      "anio": 2025,
+      "paginas": 256,
+      "precio": 16990,
+      "descripcion": "Una inteligencia artificial recuerda acontecimientos imposibles.",
+      "disponible": true
+    },
+    {
+      "id": "fantasia-1",
+      "titulo": "El bosque de jade",
+      "autor": "Isidora Lagos",
+      "categoriaId": "fantasia",
+      "anio": 2021,
+      "paginas": 368,
+      "precio": 21990,
+      "descripcion": "Una joven encuentra un sendero hacia un antiguo reino.",
+      "disponible": true
+    },
+    {
+      "id": "fantasia-2",
+      "titulo": "La torre de las mareas",
+      "autor": "Javier Acuña",
+      "categoriaId": "fantasia",
+      "anio": 2024,
+      "paginas": 312,
+      "precio": 19990,
+      "descripcion": "La magia de una torre mantiene el equilibrio de cuatro mares.",
+      "disponible": true
+    },
+    {
+      "id": "fantasia-3",
+      "titulo": "Cenizas del dragón",
+      "autor": "Florencia Muñoz",
+      "categoriaId": "fantasia",
+      "anio": 2023,
+      "paginas": 344,
+      "precio": 20990,
+      "descripcion": "Un mapa extraviado guía a viajeros hasta las montañas sagradas.",
+      "disponible": true
+    },
+    {
+      "id": "fantasia-4",
+      "titulo": "Las siete lunas",
+      "autor": "Diego Herrera",
+      "categoriaId": "fantasia",
+      "anio": 2020,
+      "paginas": 296,
+      "precio": 17990,
+      "descripcion": "Siete noches determinarán el destino de una ciudad encantada.",
+      "disponible": true
+    },
+    {
+      "id": "misterio-1",
+      "titulo": "La llave del cuarto 8",
+      "autor": "Daniela Reyes",
+      "categoriaId": "misterio",
+      "anio": 2025,
+      "paginas": 248,
+      "precio": 16990,
+      "descripcion": "Una llave sin dueño inicia una investigación en un hotel antiguo.",
+      "disponible": true
+    },
+    {
+      "id": "misterio-2",
+      "titulo": "Silencio en la bahía",
+      "autor": "Andrés Molina",
+      "categoriaId": "misterio",
+      "anio": 2023,
+      "paginas": 272,
+      "precio": 15990,
+      "descripcion": "Un periodista encuentra pistas en un pueblo costero.",
+      "disponible": true
+    },
+    {
+      "id": "misterio-3",
+      "titulo": "El retrato perdido",
+      "autor": "Fernanda Soto",
+      "categoriaId": "misterio",
+      "anio": 2022,
+      "paginas": 224,
+      "precio": 14990,
+      "descripcion": "Una restauradora descubre un mensaje oculto en una pintura.",
+      "disponible": true
+    },
+    {
+      "id": "misterio-4",
+      "titulo": "Sombras del archivo",
+      "autor": "Gabriel Bravo",
+      "categoriaId": "misterio",
+      "anio": 2024,
+      "paginas": 264,
+      "precio": 18990,
+      "descripcion": "Documentos olvidados revelan la verdad de una desaparición.",
+      "disponible": true
+    },
+    {
+      "id": "historia-1",
+      "titulo": "Rutas del Pacífico",
+      "autor": "Claudio Fuentes",
+      "categoriaId": "historia",
+      "anio": 2021,
+      "paginas": 280,
+      "precio": 17990,
+      "descripcion": "Una mirada al intercambio cultural y comercial del océano Pacífico.",
+      "disponible": true
+    },
+    {
+      "id": "historia-2",
+      "titulo": "Mujeres que hicieron historia",
+      "autor": "Antonia Vega",
+      "categoriaId": "historia",
+      "anio": 2024,
+      "paginas": 232,
+      "precio": 15990,
+      "descripcion": "Biografías ilustrativas de mujeres que transformaron su época.",
+      "disponible": true
+    },
+    {
+      "id": "historia-3",
+      "titulo": "Ciudades de piedra",
+      "autor": "Patricio Mena",
+      "categoriaId": "historia",
+      "anio": 2020,
+      "paginas": 320,
+      "precio": 19990,
+      "descripcion": "Recorrido por civilizaciones y sus técnicas de construcción.",
+      "disponible": true
+    },
+    {
+      "id": "historia-4",
+      "titulo": "Viajes por el Chile antiguo",
+      "autor": "Natalia Espinoza",
+      "categoriaId": "historia",
+      "anio": 2023,
+      "paginas": 264,
+      "precio": 18990,
+      "descripcion": "Costumbres, caminos y cambios sociales a lo largo de siglos.",
+      "disponible": true
+    },
+    {
+      "id": "tecnologia-1",
+      "titulo": "React paso a paso",
+      "autor": "Jorge Navarro",
+      "categoriaId": "tecnologia",
+      "anio": 2025,
+      "paginas": 336,
+      "precio": 23990,
+      "descripcion": "Introducción práctica a componentes, rutas y estado en React.",
+      "disponible": true
+    },
+    {
+      "id": "tecnologia-2",
+      "titulo": "Internet por dentro",
+      "autor": "Carolina Peña",
+      "categoriaId": "tecnologia",
+      "anio": 2023,
+      "paginas": 248,
+      "precio": 18990,
+      "descripcion": "Una explicación sencilla de redes, servidores y protocolos.",
+      "disponible": true
+    },
+    {
+      "id": "tecnologia-3",
+      "titulo": "Datos para todos",
+      "autor": "Emilio Vargas",
+      "categoriaId": "tecnologia",
+      "anio": 2024,
+      "paginas": 280,
+      "precio": 20990,
+      "descripcion": "Conceptos esenciales de datos, visualización y análisis.",
+      "disponible": true
+    },
+    {
+      "id": "tecnologia-4",
+      "titulo": "Diseño web accesible",
+      "autor": "Constanza Vera",
+      "categoriaId": "tecnologia",
+      "anio": 2025,
+      "paginas": 312,
+      "precio": 21990,
+      "descripcion": "Buenas prácticas para crear interfaces fáciles de usar.",
+      "disponible": true
+    },
+    {
+      "id": "infantil-1",
+      "titulo": "Luna y las luciérnagas",
+      "autor": "María José Díaz",
+      "categoriaId": "infantil",
+      "anio": 2024,
+      "paginas": 64,
+      "precio": 8990,
+      "descripcion": "Luna descubre la magia de escuchar a los demás.",
+      "disponible": true
+    },
+    {
+      "id": "infantil-2",
+      "titulo": "El pequeño explorador",
+      "autor": "Ignacio Paredes",
+      "categoriaId": "infantil",
+      "anio": 2022,
+      "paginas": 80,
+      "precio": 9990,
+      "descripcion": "Un niño viaja por lugares fascinantes usando su imaginación.",
+      "disponible": true
+    },
+    {
+      "id": "infantil-3",
+      "titulo": "La nube traviesa",
+      "autor": "Francisca Rubio",
+      "categoriaId": "infantil",
+      "anio": 2023,
+      "paginas": 56,
+      "precio": 7990,
+      "descripcion": "Una nube aprende a cuidar el cielo y a sus amigos.",
+      "disponible": true
+    },
+    {
+      "id": "infantil-4",
+      "titulo": "Amigos del jardín",
+      "autor": "Belén Ortiz",
+      "categoriaId": "infantil",
+      "anio": 2025,
+      "paginas": 72,
+      "precio": 10990,
+      "descripcion": "Animales y plantas descubren el valor de trabajar en equipo.",
+      "disponible": true
+    },
+    {
+      "id": "desarrollo-personal-1",
+      "titulo": "Pequeños hábitos",
+      "autor": "Lucía Morales",
+      "categoriaId": "desarrollo-personal",
+      "anio": 2022,
+      "paginas": 208,
+      "precio": 14990,
+      "descripcion": "Ideas simples para construir una rutina que se pueda mantener.",
+      "disponible": true
+    },
+    {
+      "id": "desarrollo-personal-2",
+      "titulo": "Aprender a aprender",
+      "autor": "Sebastián Gallardo",
+      "categoriaId": "desarrollo-personal",
+      "anio": 2025,
+      "paginas": 224,
+      "precio": 16990,
+      "descripcion": "Estrategias de estudio para organizar el tiempo y recordar mejor.",
+      "disponible": true
+    },
+    {
+      "id": "desarrollo-personal-3",
+      "titulo": "Un paso a la vez",
+      "autor": "Alejandra Núñez",
+      "categoriaId": "desarrollo-personal",
+      "anio": 2021,
+      "paginas": 184,
+      "precio": 13990,
+      "descripcion": "Reflexiones sobre paciencia, objetivos y constancia.",
+      "disponible": true
+    },
+    {
+      "id": "desarrollo-personal-4",
+      "titulo": "El valor de comenzar",
+      "autor": "Rodrigo Pino",
+      "categoriaId": "desarrollo-personal",
+      "anio": 2024,
+      "paginas": 200,
+      "precio": 15990,
+      "descripcion": "Herramientas para iniciar proyectos y superar la postergación.",
+      "disponible": true
+    }
+  ]
+}

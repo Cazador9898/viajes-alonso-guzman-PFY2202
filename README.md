@@ -1,202 +1,133 @@
-# getiomark | Desarrollo Frontend II (PFY2202)
+# getiomark | Desarrollo Frontend II (PFY2202) | Semana 5
 
-Proyecto académico: **Evaluación Sumativa, Semana 3**. El sitio de gestión de inventario del supermercado **getiomark** continúa el trabajo presentado en las Semanas 1 y 2.
+Autor: Alonso Guzmán. Actividad: Experiencia 2, Semana 5, evaluación sumativa.
 
-Autor: Alonso Guzmán.
+## Qué contiene
 
-## Funciones incluidas
+Actualización del proyecto de las semanas 1 a 4. La pantalla principal es ahora **getiomark Viajes**, una **agencia de viajes de prueba** desarrollada con React, React Router, JavaScript, HTML y CSS (Tailwind CSS + estilos propios). Se conservan el inventario, carrito y librería de las semanas anteriores mediante enlaces del menú superior.
 
-### Se mantienen las funciones de las entregas anteriores
+La interfaz permite:
 
-- Panel principal con estadísticas, alertas de existencias, búsqueda, ajuste manual del stock y exportación CSV.
-- Pantallas «Quiénes somos» y «Contacto» y menú de navegación inferior.
-- Pantallas «Ingresar artículo» y «Listado de artículos», con formulario, tabla, búsqueda, edición y eliminación.
-- React Router, Context API y Tailwind CSS 3 para el diseño responsivo.
-- Guardado de productos en el navegador mediante `localStorage` con la misma clave anterior, para conservar el inventario previo.
+- Consultar 8 destinos turísticos con ciudad, país, continente y actividades populares mediante REST GET.
+- Buscar por ciudad/país/actividad y filtrar por continente sin modificar los datos originales.
+- Abrir el detalle de un destino con React Router y consultar sus vuelos y hoteles mediante **GraphQL POST** con una variable `destinoId`.
+- Revisar precios en pesos chilenos, fechas y disponibilidad simulada.
+- Seleccionar vuelo y hotel si existen cupos, y preparar una cotización referencial de ejemplo (no genera reservas reales).
+- Visualizar estados de carga, fallos de conexión, datos vacíos, avisos y botón de reintentar.
+- Mantener el proyecto anterior (inventario, carrito, librería, acerca de y contacto).
 
-### Novedades de la Semana 3
+**Aviso:** destinos, vuelos y hoteles son inventados para la actividad académica. Los precios no son ofertas reales y el sistema no permite comprar ni reservar.
 
-1. **Filtro dinámico por categoría:** en «Listado de artículos» se puede seleccionar «Todas las categorías» o una categoría concreta. La tabla se actualiza al cambiar el filtro. La lista original se conserva porque se usa un resultado derivado del estado global, sin modificar el arreglo original.
-2. **Pantalla de detalle de artículos:** el usuario puede pulsar el nombre o el ícono del ojo en el listado. Se muestran SKU, marca, tipo, categoría, proveedor, precio, stock disponible y stock mínimo.
-3. **Agregar al carrito desde el detalle:** la cantidad seleccionada se descuenta inmediatamente del stock general. No se permite agregar más unidades de las disponibles ni comprar un artículo agotado.
-4. **Pantalla «Carrito»:** se muestran los artículos seleccionados, sus cantidades, el precio unitario, el subtotal y el total referencial.
-5. **Actualizar cantidades:** el botón `+` aumenta las unidades en el carrito y reduce el stock disponible. El botón `−` hace lo contrario. Si la cantidad llega a cero, la línea desaparece del carrito y las unidades regresan al inventario.
-6. **Quitar o vaciar el carrito:** las unidades que estaban reservadas se devuelven automáticamente al inventario.
-7. **Persistencia:** el carrito se conserva al actualizar la página. No se descuenta el stock por segunda vez cuando se recarga.
-8. **Diseño adaptativo y estructura modular:** componentes y funciones independientes, manteniendo el estilo anterior de getiomark.
+## Inicio local (recomendado para evaluar REST + GraphQL reales)
 
-> Este es un proyecto académico de frontend. El carrito no procesa pagos reales y las existencias se guardan exclusivamente en el navegador de cada usuario.
-
-## Requisitos y ejecución
-
-- Node.js 20.19 o superior (recomendado Node.js 22).
-- npm y un editor, por ejemplo Visual Studio Code.
-- Acceso a internet la primera vez para instalar dependencias.
-
-Desde la carpeta **getiomark** que contiene `package.json`, ejecutar:
+Instala Node.js 22 o compatible con Vite 6, abre esta carpeta en Visual Studio Code y ejecuta:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abrir la dirección que muestra Vite, generalmente `http://localhost:5173/`.
+Abre **http://localhost:5173/**. `npm run dev` inicia React/Vite y el backend mock juntos. La API se ejecuta en **http://localhost:3001**; Vite redirige `/api` y `/graphql` al servidor Node.
 
-Comandos útiles:
+Puedes probar REST en un navegador:
 
-```bash
-npm test          # pruebas de datos, carrito, filtro y validaciones
-npm run build     # crea la carpeta dist/ para publicación
-npm run preview   # permite revisar la compilación de producción
+- `http://localhost:3001/api/destinos`
+- `http://localhost:3001/api/destinos?q=madrid`
+- `http://localhost:3001/api/destinos/paris`
+- `http://localhost:3001/api/salud`
+
+Consulta GraphQL de prueba (en PowerShell):
+
+```powershell
+$body = @{
+  query = 'query OpcionesDestino($destinoId: ID!) { vuelos(destinoId: $destinoId) { id aerolinea precioCLP fechaSalida asientosDisponibles } hoteles(destinoId: $destinoId) { id nombre precioNocheCLP habitacionesDisponibles } }'
+  variables = @{ destinoId = 'paris' }
+} | ConvertTo-Json -Depth 5
+Invoke-RestMethod -Uri 'http://localhost:3001/graphql' -Method Post -ContentType 'application/json' -Body $body
 ```
 
-## Páginas y rutas
+Respuesta GraphQL real: `data.vuelos` y `data.hoteles` filtrados por el destino indicado. El servidor utiliza el paquete oficial `graphql` (`buildSchema` y `graphql`) para validar consultas, campos y variables.
 
-| Página | Ruta local | Archivo |
-| --- | --- | --- |
-| Inicio / inventario | `/` | `src/pages/Dashboard.jsx` |
-| Quiénes somos | `/quienes-somos` | `src/pages/About.jsx` |
-| Contacto | `/contacto` | `src/pages/Contact.jsx` |
-| Ingresar artículo | `/articulos/nuevo` | `src/pages/NewArticle.jsx` |
-| Listado + filtro | `/articulos/listado` | `src/pages/ArticlesList.jsx` |
-| Detalle de artículo | `/articulos/:id` | `src/pages/ArticleDetail.jsx` |
-| Carrito de compras | `/carrito` | `src/pages/ShoppingCart.jsx` |
+### Otros comandos
 
-En local se usa `BrowserRouter`. Al compilar para **GitHub Pages**, se utiliza automáticamente `HashRouter`, para que los enlaces internos sigan funcionando aunque GitHub Pages no tenga un servidor React. En la web publicada las rutas se ven como `#/carrito` o `#/articulos/listado`.
+```bash
+npm run api       # ejecutar solo el mock Node
+npm run dev:web   # ejecutar solo el frontend
+npm test          # pruebas automatizadas
+npm run build     # compilar para producción
+npm run preview   # revisar build; iniciar npm run api aparte si requiere GraphQL local
+```
 
-## Cómo se sincronizan inventario y carrito
+Si `npm run dev:web` se ejecuta sin la API, la sección Viajes mostrará un aviso de error y la opción de reintentar. Para verificar la integración real debes usar `npm run dev`.
 
-El proveedor `src/context/InventoryContext.jsx` administra `products` y `cart` en un mismo `useReducer`. Las reglas se definen en `src/utils/inventoryReducer.js`.
+## Rutas de la aplicación
 
-Cada artículo del carrito guarda solo `{ id, quantity }`. Los detalles de ese artículo se obtienen del inventario global, de manera que editar su nombre o precio se refleja también en el carrito.
+| Página | Ruta |
+| --- | --- |
+| Agencia de viajes (inicio) | `/` |
+| Agencia de viajes (acceso alternativo) | `/viajes` |
+| Detalle con vuelos/hoteles | `/viajes/destino/:id` |
+| Inventario anterior | `/inventario` |
+| Nuevo artículo | `/articulos/nuevo` |
+| Lista de artículos | `/articulos/listado` |
+| Detalle de artículo | `/articulos/:id` |
+| Carrito | `/carrito` |
+| Librería de Semana 4 | `/libreria` |
+| Libros por categoría | `/libreria/categoria/:categoria` |
+| Detalle libro | `/libreria/libro/:id` |
+| Quiénes somos | `/quienes-somos` |
+| Contacto | `/contacto` |
 
-- `ADD_TO_CART`: se reserva la cantidad elegida y se descuenta del producto.
-- `CHANGE_CART_QUANTITY`: al subir el carrito se resta del stock; al bajarlo se devuelve.
-- `REMOVE_FROM_CART`: devuelve todas las unidades de la línea eliminada.
-- `CLEAR_CART`: devuelve todas las unidades de todas las líneas.
-- `DELETE_PRODUCT`: elimina el producto del inventario y quita la posible línea del carrito.
-- `filterProducts`: permite filtrar por categoría, búsqueda y estado, sin alterar el inventario.
-
-Las funciones verifican que la cantidad sea entera y positiva y que no se reserve stock inexistente. De este modo, los cambios de carrito e inventario se realizan en **una sola transición de estado**.
-
-El inventario usa la clave `getiomark-inventory-v1` (la misma que en las Semanas 1 y 2), mientras el carrito usa la nueva clave `getiomark-cart-v1`. Al recargar la página se recuperan ambos valores.
-
-## Prueba manual sugerida para la presentación
-
-1. Abre «Listado de artículos». Comprueba que aparecen los productos registrados.
-2. Selecciona «Lácteos» y verifica que solo se muestran los productos de esa categoría. Luego selecciona «Todas las categorías»: vuelven a aparecer todos los artículos.
-3. Haz clic en «Leche entera 1 L». Se abre su ficha con todos los datos y, al comenzar con datos limpios, **48 unidades disponibles**.
-4. Selecciona **2 unidades** y pulsa «Agregar al carrito». La ficha mostrará **46 disponibles** y **2 en el carrito**.
-5. Entra a «Carrito» y pulsa `+` junto a la leche. El carrito mostrará **3 unidades** y el inventario **45 disponibles**.
-6. Pulsa `−`: el carrito vuelve a **2 unidades** y el inventario a **46 disponibles**.
-7. Quita la leche del carrito. El stock vuelve a **48**.
-8. Agrega un artículo nuevamente y recarga el navegador. Verifica que se conserva el carrito y el stock descontado.
-9. Registra un artículo nuevo desde «Ingresar artículo» y comprueba que aparece en el listado y que se puede comprar desde su detalle.
-
-Si ya tienes datos de semanas anteriores en ese navegador, los valores de stock inicial pueden ser distintos: el sistema mantiene las existencias guardadas.
-
-## Estructura principal
+## Implementación técnica
 
 ```text
 getiomark/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml             # despliegue automático a GitHub Pages
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── ProductModal.jsx
-│   ├── context/
-│   │   └── InventoryContext.jsx    # estado global compartido
-│   ├── data/
-│   │   └── products.js
-│   ├── pages/
-│   │   ├── Dashboard.jsx
-│   │   ├── About.jsx
-│   │   ├── Contact.jsx
-│   │   ├── NewArticle.jsx
-│   │   ├── ArticlesList.jsx        # filtro + enlaces a detalles
-│   │   ├── ArticleDetail.jsx      # nuevo en Semana 3
-│   │   └── ShoppingCart.jsx       # nuevo en Semana 3
-│   ├── styles/
-│   │   ├── index.css
-│   │   └── tailwind.css
-│   ├── utils/
-│   │   ├── inventory.js           # almacenamiento del inventario/carrito y CSV
-│   │   ├── inventoryReducer.js    # reglas puras y filtros
-│   │   └── productValidation.js
-│   ├── App.jsx                    # menús y rutas React
-│   └── main.jsx                   # router y provider
-├── tests/
-│   ├── inventory.test.js          # tests heredados
-│   └── cart.test.js               # tests agregados
-├── index.html
-├── package.json
-├── postcss.config.cjs
-├── tailwind.config.cjs
-├── vite.config.js
-└── README.md
+├─ .github/workflows/deploy.yml   # GitHub Pages automático
+├─ public/mock/                   # Copias JSON de prueba para Pages
+├─ server/
+│  ├─ data/viajes.json            # Destinos, vuelos y hoteles de muestra
+│  ├─ data/catalogo.json          # Datos de libros (Semana 4)
+│  ├─ mock-api.mjs                # REST GET + endpoint POST /graphql
+│  └─ travel-graphql.mjs          # Esquema y resolvers de GraphQL
+├─ src/
+│  ├─ context/TravelContext.jsx   # Estado global, control de carga REST
+│  ├─ services/travelApi.js       # fetch REST/GraphQL, caché y errores
+│  ├─ components/TravelUi.jsx     # Indicadores y componentes compartidos
+│  ├─ pages/TravelCatalog.jsx     # Búsqueda, filtro y tarjetas
+│  ├─ pages/TravelDetail.jsx      # Vuelos, hoteles y resumen
+│  ├─ utils/travel.js             # Filtros, disponibilidad, cotización
+│  ├─ styles/travel.css           # CSS responsive
+│  └─ App.jsx                     # Rutas y navegación actualizadas
+├─ scripts/sync-mock.mjs          # Copias JSON estáticas para Pages
+└─ tests/travel.test.js           # Pruebas de REST, GraphQL y filtros
 ```
 
-## Criterios de la pauta sumativa
+REST y GraphQL se implementan como **endpoints independientes**. REST devuelve los destinos (`GET /api/destinos`). GraphQL recupera vuelos y hoteles del destino seleccionado (`POST /graphql`). `travelApi.js` usa caché temporal de 2 minutos para no duplicar solicitudes iguales. Los componentes utilizan `useState` y `useEffect` para manejar carga, errores, selección y actualización.
 
-| Criterio | Puntaje máximo | Archivo principal |
-| --- | ---: | --- |
-| Pantalla de listado con datos completos | 15 | `ArticlesList.jsx` |
-| Filtro dinámico sin pérdida de datos | 15 | `ArticlesList.jsx`, `inventoryReducer.js` |
-| Pantalla de detalle e interacción | 15 | `ArticleDetail.jsx` |
-| Modificación de inventario al comprar o cambiar el carrito | 15 | `ShoppingCart.jsx`, `inventoryReducer.js` |
-| Framework CSS y diseño responsivo | 15 | `tailwind.config.cjs`, archivos `src/styles/` y páginas |
-| Código modular y reutilizable | 15 | `context/`, `utils/`, `pages/` |
-| GitHub, documentación y GitHub Pages | 10 | `README.md`, `.github/workflows/deploy.yml` |
-| **Total** | **100** | |
+### GitHub Pages: diferencia importante
 
-La publicación efectiva en GitHub Pages debe realizarla el estudiante desde su cuenta de GitHub para completar el último criterio.
+GitHub Pages **solo aloja archivos estáticos**. Para poder mostrar la interfaz publicada, el flujo de build copia los registros del backend a `public/mock/destinos.json` y `public/mock/opciones-viaje.json`. En esa vista web se usa `fetch` sobre JSON estático y se filtra la **copia** del resultado de GraphQL. Esto **no es** un endpoint GraphQL ejecutándose en Pages.
 
-## Publicar en GitHub y GitHub Pages
+Para demostrar los puntos REST y GraphQL de la pauta al docente, ejecuta el proyecto localmente con `npm run dev` y muestra la pestaña **Network/Red** del navegador:
 
-El formato solicitado para el repositorio es:
+- GET `/api/destinos` al cargar el catálogo.
+- POST `/graphql` al abrir un destino, con `query` y `variables.destinoId`.
 
-`supermercado-alonso-guzman-PFY2202`
+Si necesitas que GraphQL ejecute consultas en una web pública, deberás hospedar el backend Node en otro servicio que ejecute procesos, o usar la demostración local para la entrega.
 
-**Si aún no has creado un repositorio**:
+## Publicación en GitHub
 
-1. Crea un repositorio de GitHub con ese nombre.
-2. Abre la terminal en la carpeta del proyecto y ejecuta:
+El repositorio utilizado antes era `Cazador9898/DESARROLLO-FRONTEND-II_002A`. La consigna de la Semana 5 pide específicamente el formato **`viajes-nombre-apellido-siglaCurso`**, por ejemplo `viajes-alonso-guzman-PFY2202`.
 
-```bash
-git init
-git add .
-git commit -m "Semana 3: filtro, detalles y carrito getiomark"
-git branch -M main
-git remote add origin https://github.com/TU-USUARIO/supermercado-alonso-guzman-PFY2202.git
-git push -u origin main
-```
+1. Guarda una copia de la versión anterior, descarga el proyecto y copia el **contenido** de esta carpeta sobre tu clon local del repositorio anterior, conservando `.git`.
+2. Ejecuta `npm install`, `npm test` y `npm run build` para verificar.
+3. Sube los cambios: `git add -A`, `git commit -m "Semana 5 - Viajes REST y GraphQL"`, `git push origin main`.
+4. En GitHub revisa `Settings > Pages > Source: GitHub Actions`.
+5. Comprueba que el workflow `Publicar getiomark en GitHub Pages` termine en verde y abre la URL pública.
+6. Para ajustar el nombre del repositorio a la consigna, renómbralo desde GitHub > Settings > General > Repository name. Si lo renombras, actualiza la URL remota local con `git remote set-url origin https://github.com/Cazador9898/viajes-alonso-guzman-PFY2202.git`.
 
-Reemplaza `TU-USUARIO` por tu usuario real de GitHub.
+La base de rutas de Vite en Pages se configura automáticamente a partir del nombre actual del repositorio (`GITHUB_REPOSITORY`).
 
-**Si ya tienes el proyecto en GitHub**, conserva tu carpeta `.git`, actualiza sus archivos con esta entrega y ejecuta:
+## Pruebas de navegador requeridas por la pauta
 
-```bash
-git add .
-git commit -m "Semana 3: carrito y detalle de articulos"
-git push
-```
-
-**Activar GitHub Pages:**
-
-1. En GitHub entra al repositorio y abre **Settings → Pages**.
-2. En la sección **Build and deployment**, elige **GitHub Actions** como fuente de publicación.
-3. Ve a la pestaña **Actions** para revisar la ejecución de «Publicar getiomark en GitHub Pages».
-4. Cuando termine correctamente, accede a la web publicada, cuya dirección normalmente tendrá el formato:
-   `https://TU-USUARIO.github.io/supermercado-alonso-guzman-PFY2202/`
-5. Entrega al docente el enlace del **repositorio** y el de **GitHub Pages**.
-
-El workflow incluido ejecuta `npm install`, `npm test`, `npm run build` y publica `dist/` automáticamente cada vez que se suben cambios a `main`. La configuración de Vite determina la ruta base desde el nombre real del repositorio y permite que los recursos CSS/JS se carguen correctamente en GitHub Pages.
-
-## Limitaciones
-
-- Es una demostración académica, sin servidor, cuentas reales, pagos, ni sincronización entre dispositivos.
-- Los datos se guardan en `localStorage` del navegador utilizado. Borrar los datos del sitio elimina los productos guardados y el carrito.
-- Se incluye el código y las pruebas, pero es necesario instalar las dependencias para iniciar Vite y verificar la interfaz en el computador del estudiante.
+Después de compilar, revisa Chrome, Firefox y Edge: carga del inicio, navegación al detalle, selección de vuelo y hotel, validación de agotados, respuesta al filtro y presentación en pantalla móvil. La automatización por sí sola no prueba visualmente los distintos navegadores; anota resultados y captura evidencias cuando corresponda.

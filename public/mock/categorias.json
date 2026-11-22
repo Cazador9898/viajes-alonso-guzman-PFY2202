@@ -1,0 +1,61 @@
+{
+  "data": [
+    {
+      "id": "ficcion",
+      "nombre": "Ficción",
+      "descripcion": "Historias que conectan con la vida cotidiana y la imaginación.",
+      "emoji": "📖",
+      "color": "#E7F5E5"
+    },
+    {
+      "id": "ciencia-ficcion",
+      "nombre": "Ciencia ficción",
+      "descripcion": "Viajes al futuro, inteligencia artificial y nuevos mundos.",
+      "emoji": "🚀",
+      "color": "#E7EDFF"
+    },
+    {
+      "id": "fantasia",
+      "nombre": "Fantasía",
+      "descripcion": "Mundos mágicos, criaturas y aventuras extraordinarias.",
+      "emoji": "🪄",
+      "color": "#F0E8FF"
+    },
+    {
+      "id": "misterio",
+      "nombre": "Misterio",
+      "descripcion": "Enigmas, secretos e investigaciones sorprendentes.",
+      "emoji": "🔍",
+      "color": "#F9EBE2"
+    },
+    {
+      "id": "historia",
+      "nombre": "Historia",
+      "descripcion": "Relatos de civilizaciones y acontecimientos del pasado.",
+      "emoji": "🏛️",
+      "color": "#F5EEDC"
+    },
+    {
+      "id": "tecnologia",
+      "nombre": "Tecnología",
+      "descripcion": "Ideas y herramientas para comprender el mundo digital.",
+      "emoji": "💻",
+      "color": "#DFF2F7"
+    },
+    {
+      "id": "infantil",
+      "nombre": "Infantil",
+      "descripcion": "Lecturas entretenidas para pequeños lectores.",
+      "emoji": "🧸",
+      "color": "#FFF2CC"
+    },
+    {
+      "id": "desarrollo-personal",
+      "nombre": "Desarrollo personal",
+      "descripcion": "Hábitos, aprendizaje y crecimiento personal.",
+      "emoji": "🌱",
+      "color": "#E5F5ED"
+    }
+  ],
+  "total": 8
+}

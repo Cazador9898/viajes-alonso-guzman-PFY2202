@@ -1,5 +1,5 @@
 import { NavLink, Navigate, Route, Routes, useLocation } from 'react-router-dom';
-import { Boxes, CircleHelp, ClipboardList, Headphones, PackagePlus, ShoppingBasket, ShoppingCart, Sparkles } from 'lucide-react';
+import { Boxes, CircleHelp, ClipboardList, Headphones, PackagePlus, ShoppingBasket, ShoppingCart, Sparkles, BookOpenText, PlaneTakeoff } from 'lucide-react';
 import Dashboard from './pages/Dashboard.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
@@ -7,24 +7,31 @@ import NewArticle from './pages/NewArticle.jsx';
 import ArticlesList from './pages/ArticlesList.jsx';
 import ArticleDetail from './pages/ArticleDetail.jsx';
 import ShoppingCartPage from './pages/ShoppingCart.jsx';
+import BookCatalog from './pages/BookCatalog.jsx';
+import BookDetail from './pages/BookDetail.jsx';
+import TravelCatalog from './pages/TravelCatalog.jsx';
+import TravelDetail from './pages/TravelDetail.jsx';
 import { useInventory } from './context/InventoryContext.jsx';
 
 const navigation = [
-  { to: '/', label: 'Inventario', icon: Boxes, end: true },
+  { to: '/', label: 'Viajes', icon: PlaneTakeoff, end: true },
   { to: '/quienes-somos', label: 'Quiénes somos', icon: CircleHelp },
   { to: '/contacto', label: 'Contacto', icon: Headphones },
 ];
 
 const managementNavigation = [
+  { to: '/inventario', label: 'Inventario', icon: Boxes },
   { to: '/articulos/nuevo', label: 'Ingresar artículo', icon: PackagePlus },
   { to: '/articulos/listado', label: 'Listado de artículos', icon: ClipboardList },
   { to: '/carrito', label: 'Carrito', icon: ShoppingCart },
+  { to: '/libreria', label: 'Librería', icon: BookOpenText },
+  { to: '/viajes', label: 'Viajes', icon: PlaneTakeoff },
 ];
 
 function Header() {
   const { pathname } = useLocation();
   const current = [...navigation, ...managementNavigation].find(({ to }) => to === pathname);
-  const currentLabel = current?.label ?? (pathname.startsWith('/articulos/') ? 'Detalle de artículo' : 'Inventario');
+  const currentLabel = current?.label ?? (pathname.startsWith('/viajes/') ? 'Agencia de viajes' : pathname.startsWith('/libreria/') ? 'Librería de libros' : pathname.startsWith('/articulos/') ? 'Detalle de artículo' : 'getiomark');
 
   return (
     <header className="site-header">
@@ -43,13 +50,13 @@ function Header() {
   );
 }
 
-// Menú de gestión ampliado en Semana 3. Se conserva el menú principal inferior.
+// Menú de secciones: permite conservar los proyectos de las semanas anteriores.
 function ArticlesNav() {
   const { cartCount } = useInventory();
   return (
     <div className="border-b border-emerald-100 bg-white/90" >
-      <nav aria-label="Menú de gestión de artículos" className="page-shell flex flex-wrap items-center gap-2 py-3 sm:gap-3">
-        <span className="mr-2 hidden text-xs font-extrabold uppercase tracking-wider text-emerald-950 md:inline">Gestión de artículos</span>
+      <nav aria-label="Menú de secciones y gestión" className="page-shell flex flex-wrap items-center gap-2 py-3 sm:gap-3">
+        <span className="mr-2 hidden text-xs font-extrabold uppercase tracking-wider text-emerald-950 md:inline">Secciones getiomark</span>
         {managementNavigation.map(({ to, label, icon: Icon }) => (
           <NavLink key={to} to={to} className={({ isActive }) => `inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-xs font-extrabold transition-colors ${isActive ? 'border-emerald-800 bg-emerald-900 text-white' : 'border-emerald-100 bg-emerald-50 text-emerald-900 hover:border-emerald-400 hover:bg-emerald-100'}`}>
             <Icon size={17} aria-hidden="true" /> {label} {to === '/carrito' && <span aria-label={`${cartCount} unidades en el carrito`} className="rounded-full bg-lime-200 px-2 py-0.5 text-[11px] font-extrabold text-emerald-950">{cartCount}</span>}
@@ -80,13 +87,19 @@ export default function App() {
       <ArticlesNav />
       <main id="contenido" className="page-shell main-content">
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<TravelCatalog />} />
+          <Route path="/inventario" element={<Dashboard />} />
           <Route path="/quienes-somos" element={<About />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="/articulos/nuevo" element={<NewArticle />} />
           <Route path="/articulos/listado" element={<ArticlesList />} />
           <Route path="/articulos/:id" element={<ArticleDetail />} />
           <Route path="/carrito" element={<ShoppingCartPage />} />
+          <Route path="/libreria" element={<BookCatalog />} />
+          <Route path="/libreria/categoria/:categoria" element={<BookCatalog />} />
+          <Route path="/libreria/libro/:id" element={<BookDetail />} />
+          <Route path="/viajes" element={<TravelCatalog />} />
+          <Route path="/viajes/destino/:id" element={<TravelDetail />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

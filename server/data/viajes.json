@@ -1,0 +1,680 @@
+{
+  "destinos": [
+    {
+      "id": "buenos-aires",
+      "ciudad": "Buenos Aires",
+      "pais": "Argentina",
+      "continente": "Sudamérica",
+      "descripcion": "Tango, cultura y barrios llenos de vida.",
+      "actividades": [
+        "Caminito",
+        "Teatro Colón",
+        "Puerto Madero"
+      ],
+      "emoji": "💃",
+      "color": "#ffe9dc",
+      "mejorTemporada": "Otoño y primavera",
+      "diasSugeridos": 4
+    },
+    {
+      "id": "rio-de-janeiro",
+      "ciudad": "Río de Janeiro",
+      "pais": "Brasil",
+      "continente": "Sudamérica",
+      "descripcion": "Playas, montañas y paisajes inolvidables.",
+      "actividades": [
+        "Cristo Redentor",
+        "Copacabana",
+        "Pan de Azúcar"
+      ],
+      "emoji": "🏖️",
+      "color": "#d8f3ec",
+      "mejorTemporada": "Verano",
+      "diasSugeridos": 6
+    },
+    {
+      "id": "cusco",
+      "ciudad": "Cusco",
+      "pais": "Perú",
+      "continente": "Sudamérica",
+      "descripcion": "Historia andina y rutas hacia lugares legendarios.",
+      "actividades": [
+        "Machu Picchu",
+        "Valle Sagrado",
+        "Plaza de Armas"
+      ],
+      "emoji": "⛰️",
+      "color": "#ede4ff",
+      "mejorTemporada": "Estación seca",
+      "diasSugeridos": 5
+    },
+    {
+      "id": "cancun",
+      "ciudad": "Cancún",
+      "pais": "México",
+      "continente": "Norteamérica",
+      "descripcion": "Aguas turquesas y aventuras en el Caribe.",
+      "actividades": [
+        "Isla Mujeres",
+        "Cenotes",
+        "Chichén Itzá"
+      ],
+      "emoji": "🌴",
+      "color": "#d8f4fa",
+      "mejorTemporada": "Primavera",
+      "diasSugeridos": 7
+    },
+    {
+      "id": "madrid",
+      "ciudad": "Madrid",
+      "pais": "España",
+      "continente": "Europa",
+      "descripcion": "Museos, parques y tradiciones españolas.",
+      "actividades": [
+        "Museo del Prado",
+        "Parque del Retiro",
+        "Palacio Real"
+      ],
+      "emoji": "🎨",
+      "color": "#ffe7e4",
+      "mejorTemporada": "Primavera",
+      "diasSugeridos": 7
+    },
+    {
+      "id": "paris",
+      "ciudad": "París",
+      "pais": "Francia",
+      "continente": "Europa",
+      "descripcion": "Arte, arquitectura y gastronomía parisina.",
+      "actividades": [
+        "Torre Eiffel",
+        "Louvre",
+        "Montmartre"
+      ],
+      "emoji": "🗼",
+      "color": "#e9edff",
+      "mejorTemporada": "Primavera",
+      "diasSugeridos": 7
+    },
+    {
+      "id": "tokio",
+      "ciudad": "Tokio",
+      "pais": "Japón",
+      "continente": "Asia",
+      "descripcion": "Tradición y tecnología en una ciudad vibrante.",
+      "actividades": [
+        "Shibuya",
+        "Templo Sensō-ji",
+        "Akihabara"
+      ],
+      "emoji": "🗾",
+      "color": "#fff0d1",
+      "mejorTemporada": "Primavera",
+      "diasSugeridos": 9
+    },
+    {
+      "id": "puerto-varas",
+      "ciudad": "Puerto Varas",
+      "pais": "Chile",
+      "continente": "Sudamérica",
+      "descripcion": "Lagos y volcanes en el sur de Chile.",
+      "actividades": [
+        "Lago Llanquihue",
+        "Volcán Osorno",
+        "Saltos de Petrohué"
+      ],
+      "emoji": "🌋",
+      "color": "#e0f2e1",
+      "mejorTemporada": "Verano",
+      "diasSugeridos": 4
+    }
+  ],
+  "vuelos": [
+    {
+      "id": "vl-buenos-aires-1",
+      "destinoId": "buenos-aires",
+      "aerolinea": "Aero Sur (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Buenos Aires",
+      "fechaSalida": "2027-02-08",
+      "fechaRegreso": "2027-02-12",
+      "precioCLP": 90000,
+      "asientosDisponibles": 12,
+      "duracion": "2 h aprox."
+    },
+    {
+      "id": "vl-buenos-aires-2",
+      "destinoId": "buenos-aires",
+      "aerolinea": "Cielo Express (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Buenos Aires",
+      "fechaSalida": "2027-03-14",
+      "fechaRegreso": "2027-03-18",
+      "precioCLP": 120000,
+      "asientosDisponibles": 5,
+      "duracion": "2 h aprox."
+    },
+    {
+      "id": "vl-buenos-aires-3",
+      "destinoId": "buenos-aires",
+      "aerolinea": "Rutas del Mundo (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Buenos Aires",
+      "fechaSalida": "2027-04-20",
+      "fechaRegreso": "2027-04-24",
+      "precioCLP": 150000,
+      "asientosDisponibles": 0,
+      "duracion": "2 h aprox."
+    },
+    {
+      "id": "vl-rio-de-janeiro-1",
+      "destinoId": "rio-de-janeiro",
+      "aerolinea": "Aero Sur (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Río de Janeiro",
+      "fechaSalida": "2027-02-08",
+      "fechaRegreso": "2027-02-14",
+      "precioCLP": 142000,
+      "asientosDisponibles": 12,
+      "duracion": "4 h aprox."
+    },
+    {
+      "id": "vl-rio-de-janeiro-2",
+      "destinoId": "rio-de-janeiro",
+      "aerolinea": "Cielo Express (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Río de Janeiro",
+      "fechaSalida": "2027-03-14",
+      "fechaRegreso": "2027-03-20",
+      "precioCLP": 172000,
+      "asientosDisponibles": 5,
+      "duracion": "4 h aprox."
+    },
+    {
+      "id": "vl-rio-de-janeiro-3",
+      "destinoId": "rio-de-janeiro",
+      "aerolinea": "Rutas del Mundo (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Río de Janeiro",
+      "fechaSalida": "2027-04-20",
+      "fechaRegreso": "2027-04-26",
+      "precioCLP": 202000,
+      "asientosDisponibles": 0,
+      "duracion": "4 h aprox."
+    },
+    {
+      "id": "vl-cusco-1",
+      "destinoId": "cusco",
+      "aerolinea": "Aero Sur (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Cusco",
+      "fechaSalida": "2027-02-08",
+      "fechaRegreso": "2027-02-13",
+      "precioCLP": 194000,
+      "asientosDisponibles": 12,
+      "duracion": "3 h aprox."
+    },
+    {
+      "id": "vl-cusco-2",
+      "destinoId": "cusco",
+      "aerolinea": "Cielo Express (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Cusco",
+      "fechaSalida": "2027-03-14",
+      "fechaRegreso": "2027-03-19",
+      "precioCLP": 224000,
+      "asientosDisponibles": 5,
+      "duracion": "3 h aprox."
+    },
+    {
+      "id": "vl-cusco-3",
+      "destinoId": "cusco",
+      "aerolinea": "Rutas del Mundo (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Cusco",
+      "fechaSalida": "2027-04-20",
+      "fechaRegreso": "2027-04-25",
+      "precioCLP": 254000,
+      "asientosDisponibles": 0,
+      "duracion": "3 h aprox."
+    },
+    {
+      "id": "vl-cancun-1",
+      "destinoId": "cancun",
+      "aerolinea": "Aero Sur (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Cancún",
+      "fechaSalida": "2027-02-08",
+      "fechaRegreso": "2027-02-15",
+      "precioCLP": 246000,
+      "asientosDisponibles": 12,
+      "duracion": "8 h aprox."
+    },
+    {
+      "id": "vl-cancun-2",
+      "destinoId": "cancun",
+      "aerolinea": "Cielo Express (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Cancún",
+      "fechaSalida": "2027-03-14",
+      "fechaRegreso": "2027-03-21",
+      "precioCLP": 276000,
+      "asientosDisponibles": 5,
+      "duracion": "8 h aprox."
+    },
+    {
+      "id": "vl-cancun-3",
+      "destinoId": "cancun",
+      "aerolinea": "Rutas del Mundo (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Cancún",
+      "fechaSalida": "2027-04-20",
+      "fechaRegreso": "2027-04-27",
+      "precioCLP": 306000,
+      "asientosDisponibles": 0,
+      "duracion": "8 h aprox."
+    },
+    {
+      "id": "vl-madrid-1",
+      "destinoId": "madrid",
+      "aerolinea": "Aero Sur (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Madrid",
+      "fechaSalida": "2027-02-08",
+      "fechaRegreso": "2027-02-15",
+      "precioCLP": 370000,
+      "asientosDisponibles": 12,
+      "duracion": "14 h aprox."
+    },
+    {
+      "id": "vl-madrid-2",
+      "destinoId": "madrid",
+      "aerolinea": "Cielo Express (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Madrid",
+      "fechaSalida": "2027-03-14",
+      "fechaRegreso": "2027-03-21",
+      "precioCLP": 400000,
+      "asientosDisponibles": 5,
+      "duracion": "14 h aprox."
+    },
+    {
+      "id": "vl-madrid-3",
+      "destinoId": "madrid",
+      "aerolinea": "Rutas del Mundo (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Madrid",
+      "fechaSalida": "2027-04-20",
+      "fechaRegreso": "2027-04-27",
+      "precioCLP": 430000,
+      "asientosDisponibles": 0,
+      "duracion": "14 h aprox."
+    },
+    {
+      "id": "vl-paris-1",
+      "destinoId": "paris",
+      "aerolinea": "Aero Sur (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "París",
+      "fechaSalida": "2027-02-08",
+      "fechaRegreso": "2027-02-15",
+      "precioCLP": 555000,
+      "asientosDisponibles": 12,
+      "duracion": "14 h aprox."
+    },
+    {
+      "id": "vl-paris-2",
+      "destinoId": "paris",
+      "aerolinea": "Cielo Express (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "París",
+      "fechaSalida": "2027-03-14",
+      "fechaRegreso": "2027-03-21",
+      "precioCLP": 585000,
+      "asientosDisponibles": 5,
+      "duracion": "14 h aprox."
+    },
+    {
+      "id": "vl-paris-3",
+      "destinoId": "paris",
+      "aerolinea": "Rutas del Mundo (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "París",
+      "fechaSalida": "2027-04-20",
+      "fechaRegreso": "2027-04-27",
+      "precioCLP": 615000,
+      "asientosDisponibles": 0,
+      "duracion": "14 h aprox."
+    },
+    {
+      "id": "vl-tokio-1",
+      "destinoId": "tokio",
+      "aerolinea": "Aero Sur (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Tokio",
+      "fechaSalida": "2027-02-08",
+      "fechaRegreso": "2027-02-17",
+      "precioCLP": 740000,
+      "asientosDisponibles": 12,
+      "duracion": "26 h aprox."
+    },
+    {
+      "id": "vl-tokio-2",
+      "destinoId": "tokio",
+      "aerolinea": "Cielo Express (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Tokio",
+      "fechaSalida": "2027-03-14",
+      "fechaRegreso": "2027-03-23",
+      "precioCLP": 770000,
+      "asientosDisponibles": 5,
+      "duracion": "26 h aprox."
+    },
+    {
+      "id": "vl-tokio-3",
+      "destinoId": "tokio",
+      "aerolinea": "Rutas del Mundo (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Tokio",
+      "fechaSalida": "2027-04-20",
+      "fechaRegreso": "2027-04-29",
+      "precioCLP": 800000,
+      "asientosDisponibles": 0,
+      "duracion": "26 h aprox."
+    },
+    {
+      "id": "vl-puerto-varas-1",
+      "destinoId": "puerto-varas",
+      "aerolinea": "Aero Sur (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Puerto Varas",
+      "fechaSalida": "2027-02-08",
+      "fechaRegreso": "2027-02-12",
+      "precioCLP": 925000,
+      "asientosDisponibles": 12,
+      "duracion": "2 h aprox."
+    },
+    {
+      "id": "vl-puerto-varas-2",
+      "destinoId": "puerto-varas",
+      "aerolinea": "Cielo Express (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Puerto Varas",
+      "fechaSalida": "2027-03-14",
+      "fechaRegreso": "2027-03-18",
+      "precioCLP": 955000,
+      "asientosDisponibles": 5,
+      "duracion": "2 h aprox."
+    },
+    {
+      "id": "vl-puerto-varas-3",
+      "destinoId": "puerto-varas",
+      "aerolinea": "Rutas del Mundo (demo)",
+      "origen": "Santiago (SCL)",
+      "destino": "Puerto Varas",
+      "fechaSalida": "2027-04-20",
+      "fechaRegreso": "2027-04-24",
+      "precioCLP": 985000,
+      "asientosDisponibles": 0,
+      "duracion": "2 h aprox."
+    }
+  ],
+  "hoteles": [
+    {
+      "id": "ht-buenos-aires-1",
+      "destinoId": "buenos-aires",
+      "nombre": "Hotel Mirador Buenos Aires",
+      "ubicacion": "Zona turística de Buenos Aires",
+      "estrellas": 5,
+      "precioNocheCLP": 98000,
+      "habitacionesDisponibles": 8,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-12",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Piscina"
+      ]
+    },
+    {
+      "id": "ht-buenos-aires-2",
+      "destinoId": "buenos-aires",
+      "nombre": "Hotel Central Buenos Aires",
+      "ubicacion": "Centro de Buenos Aires",
+      "estrellas": 3,
+      "precioNocheCLP": 47000,
+      "habitacionesDisponibles": 4,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-12",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Recepción 24 h"
+      ]
+    },
+    {
+      "id": "ht-rio-de-janeiro-1",
+      "destinoId": "rio-de-janeiro",
+      "nombre": "Hotel Mirador Río de Janeiro",
+      "ubicacion": "Zona turística de Río de Janeiro",
+      "estrellas": 5,
+      "precioNocheCLP": 113000,
+      "habitacionesDisponibles": 8,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-14",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Piscina"
+      ]
+    },
+    {
+      "id": "ht-rio-de-janeiro-2",
+      "destinoId": "rio-de-janeiro",
+      "nombre": "Hotel Central Río de Janeiro",
+      "ubicacion": "Centro de Río de Janeiro",
+      "estrellas": 3,
+      "precioNocheCLP": 62000,
+      "habitacionesDisponibles": 4,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-14",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Recepción 24 h"
+      ]
+    },
+    {
+      "id": "ht-cusco-1",
+      "destinoId": "cusco",
+      "nombre": "Hotel Mirador Cusco",
+      "ubicacion": "Zona turística de Cusco",
+      "estrellas": 5,
+      "precioNocheCLP": 128000,
+      "habitacionesDisponibles": 6,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-13",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Piscina"
+      ]
+    },
+    {
+      "id": "ht-cusco-2",
+      "destinoId": "cusco",
+      "nombre": "Hotel Central Cusco",
+      "ubicacion": "Centro de Cusco",
+      "estrellas": 3,
+      "precioNocheCLP": 77000,
+      "habitacionesDisponibles": 0,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-13",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Recepción 24 h"
+      ]
+    },
+    {
+      "id": "ht-cancun-1",
+      "destinoId": "cancun",
+      "nombre": "Hotel Mirador Cancún",
+      "ubicacion": "Zona turística de Cancún",
+      "estrellas": 5,
+      "precioNocheCLP": 143000,
+      "habitacionesDisponibles": 8,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-15",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Piscina"
+      ]
+    },
+    {
+      "id": "ht-cancun-2",
+      "destinoId": "cancun",
+      "nombre": "Hotel Central Cancún",
+      "ubicacion": "Centro de Cancún",
+      "estrellas": 3,
+      "precioNocheCLP": 92000,
+      "habitacionesDisponibles": 4,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-15",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Recepción 24 h"
+      ]
+    },
+    {
+      "id": "ht-madrid-1",
+      "destinoId": "madrid",
+      "nombre": "Hotel Mirador Madrid",
+      "ubicacion": "Zona turística de Madrid",
+      "estrellas": 5,
+      "precioNocheCLP": 158000,
+      "habitacionesDisponibles": 8,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-15",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Piscina"
+      ]
+    },
+    {
+      "id": "ht-madrid-2",
+      "destinoId": "madrid",
+      "nombre": "Hotel Central Madrid",
+      "ubicacion": "Centro de Madrid",
+      "estrellas": 3,
+      "precioNocheCLP": 107000,
+      "habitacionesDisponibles": 4,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-15",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Recepción 24 h"
+      ]
+    },
+    {
+      "id": "ht-paris-1",
+      "destinoId": "paris",
+      "nombre": "Hotel Mirador París",
+      "ubicacion": "Zona turística de París",
+      "estrellas": 5,
+      "precioNocheCLP": 173000,
+      "habitacionesDisponibles": 6,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-15",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Piscina"
+      ]
+    },
+    {
+      "id": "ht-paris-2",
+      "destinoId": "paris",
+      "nombre": "Hotel Central París",
+      "ubicacion": "Centro de París",
+      "estrellas": 3,
+      "precioNocheCLP": 122000,
+      "habitacionesDisponibles": 0,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-15",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Recepción 24 h"
+      ]
+    },
+    {
+      "id": "ht-tokio-1",
+      "destinoId": "tokio",
+      "nombre": "Hotel Mirador Tokio",
+      "ubicacion": "Zona turística de Tokio",
+      "estrellas": 5,
+      "precioNocheCLP": 188000,
+      "habitacionesDisponibles": 8,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-17",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Piscina"
+      ]
+    },
+    {
+      "id": "ht-tokio-2",
+      "destinoId": "tokio",
+      "nombre": "Hotel Central Tokio",
+      "ubicacion": "Centro de Tokio",
+      "estrellas": 3,
+      "precioNocheCLP": 137000,
+      "habitacionesDisponibles": 4,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-17",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Recepción 24 h"
+      ]
+    },
+    {
+      "id": "ht-puerto-varas-1",
+      "destinoId": "puerto-varas",
+      "nombre": "Hotel Mirador Puerto Varas",
+      "ubicacion": "Zona turística de Puerto Varas",
+      "estrellas": 5,
+      "precioNocheCLP": 203000,
+      "habitacionesDisponibles": 8,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-12",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Piscina"
+      ]
+    },
+    {
+      "id": "ht-puerto-varas-2",
+      "destinoId": "puerto-varas",
+      "nombre": "Hotel Central Puerto Varas",
+      "ubicacion": "Centro de Puerto Varas",
+      "estrellas": 3,
+      "precioNocheCLP": 152000,
+      "habitacionesDisponibles": 4,
+      "fechaEntrada": "2027-02-08",
+      "fechaSalida": "2027-02-12",
+      "servicios": [
+        "Wi-Fi",
+        "Desayuno",
+        "Recepción 24 h"
+      ]
+    }
+  ]
+}
